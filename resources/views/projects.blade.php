@@ -29,11 +29,11 @@
 </nav>
 
 <!-- Projects Grid -->
-<section class="projects-container max-w-7xl mx-auto px-5 pb-24">
-    <div class="projects-grid grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-12" id="projectsGrid">
+<!-- <section class="projects-container max-w-7xl mx-auto px-5 pb-24">
+    <div class="projects-grid grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-12" id="projectsGrid"> -->
         
         <!-- Featured Project -->
-        <div class="project-card featured-project col-span-1 lg:col-span-2 xl:col-span-3 fade-in" data-category="web ai">
+        <!-- <div class="project-card featured-project col-span-1 lg:col-span-2 xl:col-span-3 fade-in" data-category="web ai">
             <div class="project-image h-80 bg-gradient-to-br from-pink-500 via-cyan-500 to-blue-500 relative overflow-hidden flex items-center justify-center">
                 <i class="fas fa-brain text-7xl text-white/80 z-10"></i>
                 <div class="absolute inset-0 bg-gradient-to-br from-black/30 to-black/10"></div>
@@ -64,10 +64,10 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Regular Projects -->
-        <div class="project-card fade-in" data-category="web">
+        <!-- <div class="project-card fade-in" data-category="web">
             <div class="project-image h-64 bg-gradient-to-br from-blue-600 to-purple-600 relative overflow-hidden flex items-center justify-center">
                 <i class="fas fa-shopping-cart text-5xl text-white/80 z-10"></i>
                 <div class="absolute inset-0 bg-gradient-to-br from-black/30 to-black/10"></div>
@@ -211,7 +211,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </section>
 
 <style>
@@ -230,25 +230,63 @@
         90% { opacity: 0.6; }
         100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
     }
+/* Navigation Pills Base Style */
+.nav-pill {
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  background-color: rgba(255, 255, 255, 0.1); /* bg-white/10 */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* border-white/20 */
+  border-radius: 9999px; /* rounded-full */
+  color: white;
+  font-weight: 600; /* font-semibold */
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(6px); /* backdrop-blur-sm */
+  transition: all 0.3s ease;
+}
 
-    /* Navigation Pills */
+/* Shimmer Effect Before Hover */
+.nav-pill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+/* Shimmer Effect on Hover */
+.nav-pill:hover::before {
+  transform: translateX(100%);
+}
+
+/* Hover and Active Styles */
+.nav-pill:hover,
+.nav-pill.active {
+  background: linear-gradient(to right, #06b6d4, #a855f7); /* from-cyan-500 to-purple-500 */
+  transform: translateY(-4px);
+  box-shadow: 0px 5px 10px rgba(0, 212, 255, 0.3); /* pop effect */
+  color: rgba(0, 212, 255, 0.8); /* text-cyan-300 equivalent */
+  z-index: 1;
+}
+
+   
+/* 
     .nav-pill {
-        @apply px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white font-semibold transition-all duration-300 relative overflow-hidden backdrop-blur-sm;
-    }
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+}
 
-    .nav-pill::before {
-        content: '';
-        @apply absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full transition-transform duration-500;
-    }
-
-    .nav-pill:hover::before {
-        @apply translate-x-full;
-    }
-
-    .nav-pill:hover, .nav-pill.active {
-        @apply bg-gradient-to-r from-cyan-500 to-purple-500 transform -translate-y-1;
-        box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
-    }
+.nav-pill:hover,
+.nav-pill.active {
+ 
+  transform: translateY(-4px) scale(1.05);
+ 
+  color: rgba(0, 212, 255, 0.8);
+} */
 
     /* Project Cards */
     .project-card {

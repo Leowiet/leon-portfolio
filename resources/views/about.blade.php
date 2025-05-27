@@ -86,16 +86,7 @@
             
          
                 
-                <!-- Skills Preview -->
-                <div class="skills-preview mt-10">
-                    <h3 class="text-2xl font-bold text-white mb-6">Core Expertise</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Tailwind CSS</span>
-                        <span class="skill-tag">Laravel</span>
-                         <span class="skill-tag">UI/UX Design</span>
-                    </div>
-                </div>
+               
             </div>
         </div>
     </div>
@@ -125,7 +116,7 @@
                         <div class="card-header">
                             <div class="job-badge">2025 - Present</div>
                             <h3 class="text-2xl font-bold text-white">Junior Full Stack Developer</h3>
-                            <p class="text-purple-300 text-lg">TechCorp Solutions</p>
+                            <p class="text-purple-300 text-lg">Duckcloud</p>
                         </div>
                         <div class="card-body">
                             <p class="text-gray-300 mb-4">
