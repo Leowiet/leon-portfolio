@@ -4,7 +4,7 @@
 <!-- Hero Section -->
 <section class="about-hero relative py-20 overflow-hidden">
     <!-- Animated Background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 -z-10">
         <div class="geometric-shapes">
             <div class="geo-shape geo-1"></div>
             <div class="geo-shape geo-2"></div>
@@ -265,12 +265,19 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
+        z-index: 0;
     }
 
     .geo-shape {
-        position: absolute;
-        opacity: 0.1;
-        animation: rotate 20s linear infinite;
+
+    opacity: 0.25;  /* higher opacity */
+    animation: rotate 20s linear infinite;
+    background-blend-mode: screen;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.3));
+                /* position: absolute;
+        opacity: 0.3;
+        z-index: 1;
+        animation: rotate 20s linear infinite; */
     }
 
     .geo-1 {
