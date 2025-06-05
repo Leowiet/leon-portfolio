@@ -1,455 +1,260 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Animated Background -->
-<div class="bg-animation fixed inset-0 -z-10 overflow-hidden" id="bgAnimation"></div>
-
-<!-- Hero Header Section -->
-<section class="projects-header relative text-center py-24 px-5">
-    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-sm border-b border-white/10"></div>
-    <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;grid&quot; width=&quot;10&quot; height=&quot;10&quot; patternUnits=&quot;userSpaceOnUse&quot;><path d=&quot;M 10 0 L 0 0 0 10&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;0.5&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23grid)&quot;/></svg>');"></div>
-    
-    <div class="relative z-10">
-        <h1 class="text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-yellow-400 bg-clip-text text-transparent animate-pulse">
-            My Projects
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Innovative solutions crafted with passion and precision
-        </p>
-    </div>
-</section>
-
-<!-- Filter Navigation -->
-<nav class="flex justify-center gap-4 my-12 px-5 flex-wrap">
-    <a href="#" class="nav-pill active" data-filter="all">All Projects</a>
-    <a href="#" class="nav-pill" data-filter="web">Web Apps</a>
-    <a href="#" class="nav-pill" data-filter="mobile">Mobile</a>
-    <a href="#" class="nav-pill" data-filter="ai">AI/ML</a>
-    <a href="#" class="nav-pill" data-filter="api">APIs</a>
-</nav>
-
-<!-- Projects Grid -->
-<!-- <section class="projects-container max-w-7xl mx-auto px-5 pb-24">
-    <div class="projects-grid grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-12" id="projectsGrid"> -->
+<div class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+            <div class="absolute top-40 right-20 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
+            <div class="absolute bottom-20 left-1/2 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-500"></div>
+        </div>
         
-        <!-- Featured Project -->
-        <!-- <div class="project-card featured-project col-span-1 lg:col-span-2 xl:col-span-3 fade-in" data-category="web ai">
-            <div class="project-image h-80 bg-gradient-to-br from-pink-500 via-cyan-500 to-blue-500 relative overflow-hidden flex items-center justify-center">
-                <i class="fas fa-brain text-7xl text-white/80 z-10"></i>
-                <div class="absolute inset-0 bg-gradient-to-br from-black/30 to-black/10"></div>
-            </div>
-            <div class="project-content p-8">
-                <h3 class="project-title text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                    AI-Powered Analytics Dashboard
-                </h3>
-                <p class="project-description text-gray-400 mb-6 text-lg leading-relaxed">
-                    A comprehensive analytics platform that uses machine learning to provide intelligent insights and predictive analytics for business data. Features real-time data processing and interactive visualizations.
-                </p>
-                <div class="project-tech flex flex-wrap gap-2 mb-8">
-                    <span class="tech-tag">Laravel</span>
-                    <span class="tech-tag">Vue.js</span>
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">TensorFlow</span>
-                    <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">Redis</span>
+        <div class="relative z-10 container mx-auto px-6 py-20">
+            <!-- Main Title with Animation -->
+            <div class="text-center mb-16 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+                <h1 class="text-6xl md:text-7xl font-bold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent mb-6 tracking-tight">
+                    My Projects
+                </h1>
+                
+                <!-- Stylish Slogan -->
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-xl md:text-2xl text-gray-300 leading-relaxed font-light">
+                        Explore my journey through 
+                        <span class="text-purple-400 font-semibold">code</span>, 
+                        <span class="text-cyan-400 font-semibold">design</span>, and 
+                        <span class="text-pink-400 font-semibold">innovation</span>. 
+                        Each project represents a unique challenge solved with creativity and technical expertise.
+                    </p>
                 </div>
-                <div class="project-links flex gap-4">
-                    <a href="#" class="project-link primary">
-                        <i class="fas fa-external-link-alt"></i>
-                        Live Demo
-                    </a>
-                    <a href="#" class="project-link secondary">
-                        <i class="fab fa-github"></i>
-                        View Code
-                    </a>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- Regular Projects -->
-        <!-- <div class="project-card fade-in" data-category="web">
-            <div class="project-image h-64 bg-gradient-to-br from-blue-600 to-purple-600 relative overflow-hidden flex items-center justify-center">
-                <i class="fas fa-shopping-cart text-5xl text-white/80 z-10"></i>
-                <div class="absolute inset-0 bg-gradient-to-br from-black/30 to-black/10"></div>
-            </div>
-            <div class="project-content p-8">
-                <h3 class="project-title text-2xl font-bold mb-4 text-white">E-Commerce Platform</h3>
-                <p class="project-description text-gray-400 mb-5 leading-relaxed">
-                    Modern e-commerce solution with advanced features including real-time inventory management, payment processing, and customer analytics.
-                </p>
-                <div class="project-tech flex flex-wrap gap-2 mb-6">
-                    <span class="tech-tag">Laravel</span>
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">Stripe</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                </div>
-                <div class="project-links flex gap-3">
-                    <a href="#" class="project-link primary">
-                        <i class="fas fa-external-link-alt"></i>
-                        Live Demo
-                    </a>
-                    <a href="#" class="project-link secondary">
-                        <i class="fab fa-github"></i>
-                        Code
-                    </a>
+                
+                <!-- Decorative Line -->
+                <div class="mt-8 flex justify-center">
+                    <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="project-card fade-in" data-category="mobile">
-            <div class="project-image h-64 bg-gradient-to-br from-pink-500 to-red-500 relative overflow-hidden flex items-center justify-center">
-                <i class="fas fa-mobile-alt text-5xl text-white/80 z-10"></i>
-                <div class="absolute inset-0 bg-gradient-to-br from-black/30 to-black/10"></div>
-            </div>
-            <div class="project-content p-8">
-                <h3 class="project-title text-2xl font-bold mb-4 text-white">Task Management App</h3>
-                <p class="project-description text-gray-400 mb-5 leading-relaxed">
-                    Cross-platform mobile application for task management with real-time synchronization and team collaboration features.
-                </p>
-                <div class="project-tech flex flex-wrap gap-2 mb-6">
-                    <span class="tech-tag">React Native</span>
-                    <span class="tech-tag">Firebase</span>
-                    <span class="tech-tag">Redux</span>
-                    <span class="tech-tag">Node.js</span>
+    <!-- Projects Grid Section -->
+    <div class="container mx-auto px-6 pb-20">
+        <!-- Section Header -->
+        <div class="text-center mb-16 opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Featured Work</h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                A collection of projects that showcase my skills and passion for creating exceptional digital experiences.
+            </p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Project Card Template 1 -->
+            <div class="group relative bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 opacity-0 animate-fade-in-up" style="animation-delay: 0.6s;">
+                <!-- Project Image -->
+                <div class="relative h-48 bg-gradient-to-br from-purple-600 to-cyan-600 overflow-hidden">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-white/80 text-6xl">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <div class="project-links flex gap-3">
-                    <a href="#" class="project-link primary">
-                        <i class="fas fa-download"></i>
-                        Download
-                    </a>
-                    <a href="#" class="project-link secondary">
-                        <i class="fab fa-github"></i>
-                        Code
-                    </a>
+                
+                <!-- Project Content -->
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+                        Project Name
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Brief description of the project, highlighting key features and technologies used to build this amazing solution.
+                    </p>
+                    
+                    <!-- Tech Tags -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">Laravel</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-medium">Vue.js</span>
+                        <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs font-medium">MySQL</span>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex gap-3">
+                        <a href="#" class="flex-1 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white py-2 px-4 rounded-lg text-sm font-medium text-center transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25">
+                            View Live
+                        </a>
+                        <a href="#" class="flex-1 bg-gray-700/50 hover:bg-gray-600/50 text-gray-300 hover:text-white py-2 px-4 rounded-lg text-sm font-medium text-center transition-all border border-gray-600/50 hover:border-gray-500">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card Template 2 -->
+            <div class="group relative bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 opacity-0 animate-fade-in-up" style="animation-delay: 0.8s;">
+                <div class="relative h-48 bg-gradient-to-br from-cyan-600 to-blue-600 overflow-hidden">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-white/80 text-6xl">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                        Mobile App Project
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        A responsive mobile application built with modern frameworks, featuring intuitive UI/UX and seamless performance.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-medium">React Native</span>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs font-medium">Node.js</span>
+                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-xs font-medium">Firebase</span>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <a href="#" class="flex-1 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 text-white py-2 px-4 rounded-lg text-sm font-medium text-center transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25">
+                            View Live
+                        </a>
+                        <a href="#" class="flex-1 bg-gray-700/50 hover:bg-gray-600/50 text-gray-300 hover:text-white py-2 px-4 rounded-lg text-sm font-medium text-center transition-all border border-gray-600/50 hover:border-gray-500">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card Template 3 -->
+            <div class="group relative bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-pink-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20 opacity-0 animate-fade-in-up" style="animation-delay: 1s;">
+                <div class="relative h-48 bg-gradient-to-br from-pink-600 to-rose-600 overflow-hidden">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-white/80 text-6xl">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-pink-400 transition-colors">
+                        Design System
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        A comprehensive design system with reusable components, ensuring consistency across all digital platforms.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs font-medium">Figma</span>
+                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">Tailwind</span>
+                        <span class="px-3 py-1 bg-orange-500/20 text-orange-300 rounded-full text-xs font-medium">Storybook</span>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <a href="#" class="flex-1 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white py-2 px-4 rounded-lg text-sm font-medium text-center transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25">
+                            View Live
+                        </a>
+                        <a href="#" class="flex-1 bg-gray-700/50 hover:bg-gray-600/50 text-gray-300 hover:text-white py-2 px-4 rounded-lg text-sm font-medium text-center transition-all border border-gray-600/50 hover:border-gray-500">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more project cards by duplicating the above structure -->
+            
+        </div>
+        
+        <!-- Load More Button -->
+        <div class="text-center mt-16 opacity-0 animate-fade-in-up" style="animation-delay: 1.2s;">
+            <button class="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105">
+                Load More Projects
+            </button>
+        </div>
+    </div>
+
+    <!-- Future Testimonials Section -->
+    <div class="container mx-auto px-6 py-20">
+        <div class="bg-gray-800/30 backdrop-blur-sm rounded-3xl p-12 border border-gray-700/50 opacity-0 animate-fade-in-up" style="animation-delay: 1.4s;">
+            <div class="text-center">
+                <h3 class="text-3xl font-bold text-white mb-4">What People Say</h3>
+                <p class="text-gray-400 mb-8">Testimonials from clients and collaborators will appear here.</p>
+                
+                <!-- Placeholder for testimonials -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i class="fas fa-quote-left text-white text-xl"></i>
+                        </div>
+                        <p class="text-gray-400 text-sm">Testimonial placeholder</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i class="fas fa-quote-left text-white text-xl"></i>
+                        </div>
+                        <p class="text-gray-400 text-sm">Testimonial placeholder</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i class="fas fa-quote-left text-white text-xl"></i>
+                        </div>
+                        <p class="text-gray-400 text-sm">Testimonial placeholder</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="project-card fade-in" data-category="api">
-            <div class="project-image h-64 bg-gradient-to-br from-cyan-500 to-blue-500 relative overflow-hidden flex items-center justify-center">
-                <i class="fas fa-server text-5xl text-white/80 z-10"></i>
-                <div class="absolute inset-0 bg-gradient-to-br from-black/30 to-black/10"></div>
-            </div>
-            <div class="project-content p-8">
-                <h3 class="project-title text-2xl font-bold mb-4 text-white">RESTful API Service</h3>
-                <p class="project-description text-gray-400 mb-5 leading-relaxed">
-                    Scalable microservices architecture with comprehensive API documentation, rate limiting, and advanced authentication.
-                </p>
-                <div class="project-tech flex flex-wrap gap-2 mb-6">
-                    <span class="tech-tag">Laravel</span>
-                    <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">JWT</span>
-                    <span class="tech-tag">Swagger</span>
-                </div>
-                <div class="project-links flex gap-3">
-                    <a href="#" class="project-link primary">
-                        <i class="fas fa-book"></i>
-                        API Docs
-                    </a>
-                    <a href="#" class="project-link secondary">
-                        <i class="fab fa-github"></i>
-                        Code
-                    </a>
-                </div>
+    <!-- CTA Section -->
+    <div class="container mx-auto px-6 pb-20">
+        <div class="text-center bg-gradient-to-r from-purple-900/50 to-cyan-900/50 backdrop-blur-sm rounded-3xl p-12 border border-purple-500/20 opacity-0 animate-fade-in-up" style="animation-delay: 1.6s;">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Start Your Project?</h3>
+            <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                Let's collaborate and bring your ideas to life with cutting-edge technology and creative solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#" class="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105">
+                    Get In Touch
+                </a>
+                <a href="#" class="bg-transparent border-2 border-gray-600 hover:border-gray-400 text-gray-300 hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-300">
+                    View Resume
+                </a>
             </div>
         </div>
-
-        <div class="project-card fade-in" data-category="web">
-            <div class="project-image h-64 bg-gradient-to-br from-purple-500 to-yellow-500 relative overflow-hidden flex items-center justify-center">
-                <i class="fas fa-chart-line text-5xl text-white/80 z-10"></i>
-                <div class="absolute inset-0 bg-gradient-to-br from-black/30 to-black/10"></div>
-            </div>
-            <div class="project-content p-8">
-                <h3 class="project-title text-2xl font-bold mb-4 text-white">Social Media Dashboard</h3>
-                <p class="project-description text-gray-400 mb-5 leading-relaxed">
-                    Comprehensive social media management platform with analytics, scheduling, and multi-platform integration.
-                </p>
-                <div class="project-tech flex flex-wrap gap-2 mb-6">
-                    <span class="tech-tag">Vue.js</span>
-                    <span class="tech-tag">Laravel</span>
-                    <span class="tech-tag">Chart.js</span>
-                    <span class="tech-tag">WebSocket</span>
-                </div>
-                <div class="project-links flex gap-3">
-                    <a href="#" class="project-link primary">
-                        <i class="fas fa-external-link-alt"></i>
-                        Live Demo
-                    </a>
-                    <a href="#" class="project-link secondary">
-                        <i class="fab fa-github"></i>
-                        Code
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card fade-in" data-category="ai">
-            <div class="project-image h-64 bg-gradient-to-br from-teal-400 to-pink-400 relative overflow-hidden flex items-center justify-center">
-                <i class="fas fa-robot text-5xl text-white/80 z-10"></i>
-                <div class="absolute inset-0 bg-gradient-to-br from-black/30 to-black/10"></div>
-            </div>
-            <div class="project-content p-8">
-                <h3 class="project-title text-2xl font-bold mb-4 text-white">Chatbot Assistant</h3>
-                <p class="project-description text-gray-400 mb-5 leading-relaxed">
-                    AI-powered chatbot with natural language processing capabilities and integration with multiple messaging platforms.
-                </p>
-                <div class="project-tech flex flex-wrap gap-2 mb-6">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">NLP</span>
-                    <span class="tech-tag">TensorFlow</span>
-                    <span class="tech-tag">Flask</span>
-                </div>
-                <div class="project-links flex gap-3">
-                    <a href="#" class="project-link primary">
-                        <i class="fas fa-comments"></i>
-                        Try Bot
-                    </a>
-                    <a href="#" class="project-link secondary">
-                        <i class="fab fa-github"></i>
-                        Code
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-</section>
+    </div>
+</div>
 
 <style>
-    /* Particle Animation */
-    .particle {
-        position: absolute;
-        background: linear-gradient(45deg, #00d4ff, #ff00ff);
-        border-radius: 50%;
-        opacity: 0.6;
-        animation: float 20s infinite linear;
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-
-    @keyframes float {
-        0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-        10% { opacity: 0.6; }
-        90% { opacity: 0.6; }
-        100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-/* Navigation Pills Base Style */
-.nav-pill {
-  padding: 0.75rem 1.5rem; /* px-6 py-3 */
-  background-color: rgba(255, 255, 255, 0.1); /* bg-white/10 */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* border-white/20 */
-  border-radius: 9999px; /* rounded-full */
-  color: white;
-  font-weight: 600; /* font-semibold */
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(6px); /* backdrop-blur-sm */
-  transition: all 0.3s ease;
 }
 
-/* Shimmer Effect Before Hover */
-.nav-pill::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease;
-  z-index: 0;
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
 }
 
-/* Shimmer Effect on Hover */
-.nav-pill:hover::before {
-  transform: translateX(100%);
+/* Ensure smooth scrolling animations */
+html {
+    scroll-behavior: smooth;
 }
 
-/* Hover and Active Styles */
-.nav-pill:hover,
-.nav-pill.active {
-  background: linear-gradient(to right, #06b6d4, #a855f7); /* from-cyan-500 to-purple-500 */
-  transform: translateY(-4px);
-  box-shadow: 0px 5px 10px rgba(0, 212, 255, 0.3); /* pop effect */
-  color: rgba(0, 212, 255, 0.8); /* text-cyan-300 equivalent */
-  z-index: 1;
+/* Custom hover effects for cards */
+.group:hover .fas {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
-
-   
-/* 
-    .nav-pill {
-  transition: all 0.2s ease-in-out;
-  display: inline-block;
-}
-
-.nav-pill:hover,
-.nav-pill.active {
- 
-  transform: translateY(-4px) scale(1.05);
- 
-  color: rgba(0, 212, 255, 0.8);
-} */
-
-    /* Project Cards */
-    .project-card {
-        @apply bg-white/5 border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 relative backdrop-blur-xl cursor-pointer;
-    }
-
-    .project-card::before {
-        content: '';
-        @apply absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 opacity-0 transition-opacity duration-300 z-10;
-    }
-
-    .project-card:hover::before {
-        @apply opacity-100;
-    }
-
-    .project-card:hover {
-        @apply transform -translate-y-3 scale-105 border-cyan-500/50;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 212, 255, 0.2);
-    }
-
-    /* Tech Tags */
-    .tech-tag {
-        @apply px-3 py-2 bg-cyan-500/20 border border-cyan-500/30 rounded-full text-xs text-cyan-400 font-semibold;
-    }
-
-    /* Project Links */
-    .project-link {
-        @apply px-5 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 relative overflow-hidden;
-    }
-
-    .project-link.primary {
-        @apply bg-gradient-to-r from-cyan-500 to-blue-600 text-white;
-    }
-
-    .project-link.secondary {
-        @apply bg-white/10 text-white border border-white/20;
-    }
-
-    .project-link:hover {
-        @apply transform -translate-y-1;
-    }
-
-    .project-link.primary:hover {
-        box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
-    }
-
-    .project-link.secondary:hover {
-        @apply bg-white/20;
-    }
-
-    /* Animations */
-    .fade-in {
-        @apply opacity-0 transform translate-y-8 transition-all duration-700;
-    }
-
-    .fade-in.visible {
-        @apply opacity-100 transform translate-y-0;
-    }
-
-    /* Featured Project */
-    .featured-project {
-        @apply bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border-2 border-cyan-500/30;
-    }
-
-    .featured-project .project-title {
-        @apply text-3xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent;
-    }
 </style>
 
-<script>
-    // Create animated particles
-    function createParticles() {
-        const container = document.getElementById('bgAnimation');
-        
-        setInterval(() => {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            
-            const size = Math.random() * 4 + 2;
-            const startPos = Math.random() * window.innerWidth;
-            const duration = Math.random() * 10 + 15;
-            
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
-            particle.style.left = startPos + 'px';
-            particle.style.animationDuration = duration + 's';
-            
-            container.appendChild(particle);
-            
-            setTimeout(() => {
-                if (particle.parentNode) {
-                    particle.parentNode.removeChild(particle);
-                }
-            }, duration * 1000);
-        }, 300);
-    }
-
-    // Filter functionality
-    function initializeFilters() {
-        const filterButtons = document.querySelectorAll('.nav-pill');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                const filter = button.getAttribute('data-filter');
-                
-                projectCards.forEach((card, index) => {
-                    const category = card.getAttribute('data-category') || '';
-                    const shouldShow = filter === 'all' || category.includes(filter);
-                    
-                    setTimeout(() => {
-                        if (shouldShow) {
-                            card.style.display = 'block';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            }, 50);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(30px)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
-                    }, index * 50);
-                });
-            });
-        });
-    }
-
-    // Scroll animations
-    function initializeScrollAnimations() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-    }
-
-    // Initialize everything
-    document.addEventListener('DOMContentLoaded', () => {
-        createParticles();
-        initializeFilters();
-        initializeScrollAnimations();
-        
-        setTimeout(() => {
-            document.querySelectorAll('.project-card').forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('visible');
-                }, index * 100);
-            });
-        }, 500);
-    });
-</script>
 @endsection
