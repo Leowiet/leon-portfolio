@@ -78,7 +78,7 @@
                 
                 <div class="prose prose-lg prose-invert mx-auto text-center">
                     <p class="text-xl text-gray-300 leading-relaxed mb-6">
-                        Welcome to my world! I'm Leon, a passionate full-stack developer who believes that great code is like poetry – it should be beautiful, meaningful, and powerful.
+                        Welcome to my world! I'm Leon, a passionate full-stack developer who believes that great code is like poetry. It should be beautiful, meaningful, and powerful.
                     </p>
                     <p class="text-lg text-gray-300 leading-relaxed mb-6">
                         My journey began with curiosity and evolved into a love affair with technology. I specialize in creating digital experiences that not only look stunning but also solve real-world problems and make people's lives easier.
@@ -214,18 +214,19 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <button class="group bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center space-x-2">
+                    <button class="group bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center space-x-2"
+                    onclick="window.location.href='{{ route('contact') }}';">
                         <span>Start a Project</span>
                         <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                         </svg>
                     </button>
-                    <button class="group border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+                    <!-- <button class="group border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
                         <svg class="w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                         <span>Download CV</span>
-                    </button>
+                    </button> -->
                 </div>
             </div>
         </div>
