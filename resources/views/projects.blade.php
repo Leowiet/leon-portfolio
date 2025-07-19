@@ -94,42 +94,39 @@
             </div>
         </div>
     </div>
-            <!-- Project Card Template 2 -->
-            <!-- <div class="group relative bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 opacity-0 animate-fade-in-up" style="animation-delay: 0.8s;">
-                <div class="relative h-48 bg-gradient-to-br from-cyan-600 to-blue-600 overflow-hidden">
+            <!-- Project Card Template 2 --> 
+             <div class="group relative bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 opacity-0 animate-fade-in-up" style="animation-delay: 0.8s;">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="{{ asset('images/Ecojitsaw.png') }}" alt="Ecojitsaw Screenshot" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="text-white/80 text-6xl">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                    </div>
+                    <!-- Removed phone icon on hover for Ecojitsaw project -->
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                        Mobile App Project
+                        Ecojitsaw 
                     </h3>
                     <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                        A responsive mobile application built with modern frameworks, featuring intuitive UI/UX and seamless performance.
+                       EcoJigsaw is an interactive nature-themed puzzle game built with HTML, CSS (Tailwind), and JavaScript. <br> Players select a difficulty and a nature category, then solve a visually engaging jigsaw puzzle by rearranging image pieces. Features include a stylish UI, image preview, drag-and-drop gameplay, a manual check system, and a personal puzzle library to track completed challenges.
                     </p>
                     
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-medium">React Native</span>
-                        <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs font-medium">Node.js</span>
-                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-xs font-medium">Firebase</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-medium">HTML</span>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs font-medium">Tailwind</span>
+                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-xs font-medium">JAVASCRIPT</span>
                     </div>
                     
                     <div class="flex gap-3">
-                        <a href="#" class="flex-1 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 text-white py-2 px-4 rounded-lg text-sm font-medium text-center transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25">
+                        <a href="https://leowiet.github.io/Ecojitsaw/" class="flex-1 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 text-white py-2 px-4 rounded-lg text-sm font-medium text-center transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25">
                             View Live
                         </a>
-                        <a href="#" class="flex-1 bg-gray-700/50 hover:bg-gray-600/50 text-gray-300 hover:text-white py-2 px-4 rounded-lg text-sm font-medium text-center transition-all border border-gray-600/50 hover:border-gray-500">
+                        <a href="https://github.com/Leowiet/Ecojitsaw" class="flex-1 bg-gray-700/50 hover:bg-gray-600/50 text-gray-300 hover:text-white py-2 px-4 rounded-lg text-sm font-medium text-center transition-all border border-gray-600/50 hover:border-gray-500">
                             GitHub
                         </a>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- Project Card Template 3 -->
             <!-- <div class="group relative bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-pink-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20 opacity-0 animate-fade-in-up" style="animation-delay: 1s;">
